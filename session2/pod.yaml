@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: app
+  name: app2
+spec:
+  containers:
+  - image: nginx:alpine
+    name: app
+  - image: nginx:alpine
+    name: busybox
+    args:
+      - sleep
+      - infinity

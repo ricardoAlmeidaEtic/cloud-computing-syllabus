@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: app
+  name: app
+spec:
+  containers:
+  - image: hashicorp/http-echo
+    name: app
+    ports:
+    - containerPort: 5678
+    args: ["-text=BANANAS"]
