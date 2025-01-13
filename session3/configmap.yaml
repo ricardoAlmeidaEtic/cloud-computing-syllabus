@@ -1,0 +1,88 @@
+apiVersion: v1
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Cool Hello World</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Arial', sans-serif;
+        }
+
+        body {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(135deg, #6e7bff, #ff7c7c);
+          overflow: hidden;
+          color: white;
+          text-align: center;
+          animation: gradientMove 10s infinite alternate;
+        }
+
+        h1 {
+          font-size: 4rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          opacity: 1;
+          animation: fadeIn 2s ease-out, bounce 2s infinite;
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-20px);
+          }
+          60% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @keyframes gradientMove {
+          0% {
+            background: linear-gradient(135deg, #6e7bff, #ff7c7c);
+          }
+          50% {
+            background: linear-gradient(135deg, #ff7c7c, #6e7bff);
+          }
+          100% {
+            background: linear-gradient(135deg, #6e7bff, #ff7c7c);
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Hello World!</h1>
+
+      <script>
+        // The script is no longer necessary to stop the animation, as it will no longer disappear
+      </script>
+    </body>
+    </html>
+
+
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: default
