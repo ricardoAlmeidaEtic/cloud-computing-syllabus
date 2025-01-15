@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: postgres-config
+data:
+  POSTGRESQL_PGAUDIT_LOG: "READ,WRITE"
+  POSTGRESQL_LOG_HOSTNAME: "true"
+  POSTGRESQL_DATABASE: my_database
+  ALLOW_EMPTY_PASSWORD: "yes"
+  POSTGRESQL_USERNAME: postgres
+  POSTGRESQL_ MASTER_HOST: postgresql-master
+  POSTGRESQL_REPLICATION_USER: repl_user
+  POSTGRESQL_MASTER_PORT_NUMBER: "5432"
+  
